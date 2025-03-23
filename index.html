@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLD | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">CLD</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Unleash Your Vibe</h1>
+        <p>Bold. Vibrant. Authentic.</p>
+        <a href="shop.html" class="btn">Shop the Vibes</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>✨ Featured Products ✨</h2>
+    <div class="products" id="featured-products">
+      <!-- Random products will be inserted here -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 CLD. All rights reserved.
+  </footer>
+
+  <script>
+    const products = [
+      { src: 'products/hoodie/hoodie1.jpg', name: 'Hoodie', link: 'hoodies.html' },
+      { src: 'products/tee/tee1.jpg', name: 'Tee', link: 'tees.html' },
+      { src: 'products/sticker/sticker1.jpg', name: 'Sticker', link: 'stickers.html' },
+      { src: 'products/pants/pants1.jpg', name: 'Pants', link: 'pants.html' },
+      { src: 'products/poster/poster1.jpg', name: 'Poster', link: 'posters.html' }
+    ];
+
+    function getRandomProducts(products, count) {
+      const shuffled = products.sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, count);
+    }
+
+    const featuredProducts = getRandomProducts(products, 3);
+    const container = document.getElementById('featured-products');
+
+    featuredProducts.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product';
+      productDiv.innerHTML = `
+        <a href="${product.link}">
+          <img src="${product.src}" alt="${product.name}">
+          <h3>${product.name}</h3>
+        </a>
+      `;
+      container.appendChild(productDiv);
+    });
+  </script>
+
+</body>
+</html>

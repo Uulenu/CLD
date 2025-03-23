@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLD | Product Details</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">CLD</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div id="product-details">
+      <!-- Product details will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 CLD. All rights reserved.
+  </footer>
+
+  <script>
+    const allProducts = {
+      hoodie: [
+        { src: 'products/hoodie/hoodie1.jpg', name: 'Hoodie 1', price: '$50', sizes: ['S', 'M', 'L', 'XL'], description: 'A cozy hoodie for all seasons.' },
+        { src: 'products/hoodie/hoodie2.jpg', name: 'Hoodie 2', price: '$55', sizes: ['S', 'M', 'L', 'XL'], description: 'Stylish and comfortable.' },
+        { src: 'products/hoodie/hoodie3.jpg', name: 'Hoodie 3', price: '$60', sizes: ['S', 'M', 'L', 'XL'], description: 'Perfect for chilly days.' }
+      ],
+      pants: [
+        { src: 'products/pants/pants1.jpg', name: 'Pants 1', price: '$40', sizes: ['S', 'M', 'L', 'XL'], description: 'Durable and trendy pants.' },
+        { src: 'products/pants/pants2.jpg', name: 'Pants 2', price: '$45', sizes: ['S', 'M', 'L', 'XL'], description: 'Comfortable and versatile.' },
+        { src: 'products/pants/pants3.jpg', name: 'Pants 3', price: '$50', sizes: ['S', 'M', 'L', 'XL'], description: 'Perfect for any occasion.' }
+      ],
+      tee: [
+        { src: 'products/tee/tee1.jpg', name: 'Tee 1', price: '$20', sizes: ['S', 'M', 'L', 'XL'], description: 'A stylish tee for everyday wear.' },
+        { src: 'products/tee/tee2.jpg', name: 'Tee 2', price: '$25', sizes: ['S', 'M', 'L', 'XL'], description: 'Comfortable and trendy.' },
+        { src: 'products/tee/tee3.jpg', name: 'Tee 3', price: '$30', sizes: ['S', 'M', 'L', 'XL'], description: 'Perfect for any casual outing.' }
+      ],
+      poster: [
+        { src: 'products/poster/poster1.jpg', name: 'Poster 1', price: '$10', sizes: ['18x24 inches', '24x36 inches'], description: 'A beautiful poster to decorate your space.' },
+        { src: 'products/poster/poster2.jpg', name: 'Poster 2', price: '$12', sizes: ['18x24 inches', '24x36 inches'], description: 'High-quality print for your wall.' },
+        { src: 'products/poster/poster3.jpg', name: 'Poster 3', price: '$15', sizes: ['18x24 inches', '24x36 inches'], description: 'Add a touch of art to your room.' },
+        { src: 'products/poster/poster4.jpg', name: 'Poster 4', price: '$10', sizes: ['18x24 inches', '24x36 inches'], description: 'A vibrant poster for your collection.' },
+        { src: 'products/poster/poster5.jpg', name: 'Poster 5', price: '$12', sizes: ['18x24 inches', '24x36 inches'], description: 'Perfect for modern interiors.' },
+        { src: 'products/poster/poster6.jpg', name: 'Poster 6', price: '$15', sizes: ['18x24 inches', '24x36 inches'], description: 'A stunning piece of wall art.' },
+        { src: 'products/poster/poster7.jpg', name: 'Poster 7', price: '$10', sizes: ['18x24 inches', '24x36 inches'], description: 'Brighten up your space with this poster.' },
+        { src: 'products/poster/poster8.jpg', name: 'Poster 8', price: '$12', sizes: ['18x24 inches', '24x36 inches'], description: 'A unique design for your walls.' }
+      ],
+      sticker: [
+        { src: 'products/sticker/sticker1.jpg', name: 'Sticker 1', price: '$5', sizes: ['3x3 inches'], description: 'A cool sticker for your collection.' },
+        { src: 'products/sticker/sticker2.jpg', name: 'Sticker 2', price: '$6', sizes: ['3x3 inches'], description: 'High-quality and durable.' },
+        { src: 'products/sticker/sticker3.jpg', name: 'Sticker 3', price: '$7', sizes: ['3x3 inches'], description: 'Perfect for personalizing your items.' },
+        { src: 'products/sticker/sticker4.jpg', name: 'Sticker 4', price: '$5', sizes: ['3x3 inches'], description: 'Add a touch of fun to your belongings.' },
+        { src: 'products/sticker/sticker5.jpg', name: 'Sticker 5', price: '$6', sizes: ['3x3 inches'], description: 'Stylish and vibrant.' },
+        { src: 'products/sticker/sticker6.jpg', name: 'Sticker 6', price: '$7', sizes: ['3x3 inches'], description: 'A must-have for sticker enthusiasts.' }
+      ]
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const productName = params.get('name');
+
+    const productDetails = document.getElementById('product-details');
+
+    for (const category in allProducts) {
+      const product = allProducts[category].find(p => p.name === productName);
+      if (product) {
+        productDetails.innerHTML = `
+          <img src="${product.src}" alt="${product.name}">
+          <h1>${product.name}</h1>
+          <p>${product.description}</p>
+          <p><strong>Price:</strong> ${product.price}</p>
+          <label for="size-select"><strong>Size:</strong></label>
+          <select id="size-select">
+            ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+          </select>
+          <button class="btn" id="add-to-cart-btn">Add to Cart</button>
+          <a href="shop.html" class="btn">Back to Products</a>
+        `;
+
+        document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+          const selectedSize = document.getElementById('size-select').value;
+          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+          cart.push({ ...product, size: selectedSize, quantity: 1 });
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert(`${product.name} (Size: ${selectedSize}) has been added to your cart.`);
+        });
+
+        break;
+      }
+    }
+  </script>
+
+</body>
+</html>

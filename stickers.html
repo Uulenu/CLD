@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLD | Stickers</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <!-- ...existing code... -->
+  </header>
+
+  <section class="section">
+    <h2>🎨 Stickers Collection</h2>
+    <div class="products" id="stickers-list">
+      <!-- Stickers will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <footer>
+    <!-- ...existing code... -->
+  </footer>
+
+  <script>
+    const stickers = [
+      { src: 'products/sticker/sticker1.jpg', name: 'Sticker 1', price: '$5' },
+      { src: 'products/sticker/sticker2.jpg', name: 'Sticker 2', price: '$6' },
+      { src: 'products/sticker/sticker3.jpg', name: 'Sticker 3', price: '$7' },
+      { src: 'products/sticker/sticker4.jpg', name: 'Sticker 4', price: '$5' },
+      { src: 'products/sticker/sticker5.jpg', name: 'Sticker 5', price: '$6' },
+      { src: 'products/sticker/sticker6.jpg', name: 'Sticker 6', price: '$7' }
+    ];
+
+    const stickersList = document.getElementById('stickers-list');
+
+    stickers.forEach(sticker => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product';
+      productDiv.innerHTML = `
+        <a href="product-details.html?name=${encodeURIComponent(sticker.name)}">
+          <img src="${sticker.src}" alt="${sticker.name}">
+          <h3>${sticker.name}</h3>
+          <p>${sticker.price}</p>
+        </a>
+      `;
+      stickersList.appendChild(productDiv);
+    });
+  </script>
+
+</body>
+</html>

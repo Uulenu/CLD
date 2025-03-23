@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLD | Hoodies</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">CLD</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>🔥 Hoodies Collection 🔥</h2>
+    <div class="products" id="hoodies-list">
+      <!-- Hoodies will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 CLD. All rights reserved.
+  </footer>
+
+  <script>
+    const hoodies = [
+      { src: 'products/hoodie/hoodie1.jpg', name: 'Hoodie 1', price: '$50' },
+      { src: 'products/hoodie/hoodie2.jpg', name: 'Hoodie 2', price: '$55' },
+      { src: 'products/hoodie/hoodie3.jpg', name: 'Hoodie 3', price: '$60' }
+    ];
+
+    const hoodiesList = document.getElementById('hoodies-list');
+
+    hoodies.forEach(hoodie => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product';
+      productDiv.innerHTML = `
+        <a href="product-details.html?name=${encodeURIComponent(hoodie.name)}">
+          <img src="${hoodie.src}" alt="${hoodie.name}">
+          <h3>${hoodie.name}</h3>
+          <p>${hoodie.price}</p>
+        </a>
+      `;
+      hoodiesList.appendChild(productDiv);
+    });
+  </script>
+
+</body>
+</html>

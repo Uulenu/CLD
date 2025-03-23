@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLD | Tees</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">CLD</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>✨ Tees Collection ✨</h2>
+    <div class="products" id="tees-list">
+      <!-- Tees will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 CLD. All rights reserved.
+  </footer>
+
+  <script>
+    const tees = [
+      { src: 'products/tee/tee1.jpg', name: 'Tee 1', price: '$20' },
+      { src: 'products/tee/tee2.jpg', name: 'Tee 2', price: '$25' },
+      { src: 'products/tee/tee3.jpg', name: 'Tee 3', price: '$30' }
+    ];
+
+    const teesList = document.getElementById('tees-list');
+
+    tees.forEach(tee => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product';
+      productDiv.innerHTML = `
+        <a href="product-details.html?name=${encodeURIComponent(tee.name)}">
+          <img src="${tee.src}" alt="${tee.name}">
+          <h3>${tee.name}</h3>
+          <p>${tee.price}</p>
+        </a>
+      `;
+      teesList.appendChild(productDiv);
+    });
+  </script>
+
+</body>
+</html>

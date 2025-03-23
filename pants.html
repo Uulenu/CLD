@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLD | Pants</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">CLD</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>👖 Our Pants Collection</h2>
+    <div class="products" id="pants-list">
+      <!-- Pants will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 CLD. All rights reserved.
+  </footer>
+
+  <script>
+    const pants = [
+      { src: 'products/pants/pants1.jpg', name: 'Pants 1', price: '$40' },
+      { src: 'products/pants/pants2.jpg', name: 'Pants 2', price: '$45' },
+      { src: 'products/pants/pants3.jpg', name: 'Pants 3', price: '$50' }
+    ];
+
+    const pantsList = document.getElementById('pants-list');
+
+    pants.forEach(pant => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product';
+      productDiv.innerHTML = `
+        <a href="product-details.html?name=${encodeURIComponent(pant.name)}">
+          <img src="${pant.src}" alt="${pant.name}">
+          <h3>${pant.name}</h3>
+          <p>${pant.price}</p>
+        </a>
+      `;
+      pantsList.appendChild(productDiv);
+    });
+  </script>
+
+</body>
+</html>

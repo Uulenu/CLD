@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLD | Posters</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">CLD</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>🖼️ Posters Collection</h2>
+    <div class="products" id="posters-list">
+      <!-- Posters will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 CLD. All rights reserved.
+  </footer>
+
+  <script>
+    const posters = [
+      { src: 'products/poster/poster1.jpg', name: 'Poster 1', price: '$10' },
+      { src: 'products/poster/poster2.jpg', name: 'Poster 2', price: '$12' },
+      { src: 'products/poster/poster3.jpg', name: 'Poster 3', price: '$15' },
+      { src: 'products/poster/poster4.jpg', name: 'Poster 4', price: '$10' },
+      { src: 'products/poster/poster5.jpg', name: 'Poster 5', price: '$12' },
+      { src: 'products/poster/poster6.jpg', name: 'Poster 6', price: '$15' },
+      { src: 'products/poster/poster7.jpg', name: 'Poster 7', price: '$10' },
+      { src: 'products/poster/poster8.jpg', name: 'Poster 8', price: '$12' }
+    ];
+
+    const postersList = document.getElementById('posters-list');
+
+    posters.forEach(poster => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product';
+      productDiv.innerHTML = `
+        <a href="product-details.html?name=${encodeURIComponent(poster.name)}">
+          <img src="${poster.src}" alt="${poster.name}">
+          <h3>${poster.name}</h3>
+          <p>${poster.price}</p>
+        </a>
+      `;
+      postersList.appendChild(productDiv);
+    });
+  </script>
+
+</body>
+</html>

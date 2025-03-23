@@ -212,3 +212,170 @@ footer {
     font-size: 14px;
     margin: 0;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    nav a {
+        font-size: 12px;
+        margin-left: 0;
+    }
+
+    .hero {
+        height: 60vh;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 10px;
+        padding: 10px 20px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .products {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .product {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .product img {
+        height: 150px;
+    }
+
+    footer {
+        font-size: 10px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 8px;
+        padding: 8px 15px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .product img {
+        height: 120px;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        padding-top: 120px; /* Adjust for larger header */
+    }
+
+    header {
+        padding: 30px 60px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    nav a {
+        font-size: 16px;
+        margin-left: 40px;
+    }
+
+    .hero {
+        height: 90vh;
+    }
+
+    .hero h1 {
+        font-size: 56px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 15px 40px;
+    }
+
+    .section {
+        padding: 120px 80px;
+    }
+
+    .section h2 {
+        font-size: 48px;
+    }
+
+    .products {
+        gap: 30px;
+    }
+
+    .product {
+        width: 300px;
+        padding: 20px;
+    }
+
+    .product img {
+        height: 220px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 30px;
+    }
+}

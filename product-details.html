@@ -31,37 +31,29 @@
   <script>
     const allProducts = {
       hoodie: [
-        { src: 'products/hoodie/hoodie1.jpg', name: 'Hoodie 1', price: '$50', sizes: ['S', 'M', 'L', 'XL'], description: 'A cozy hoodie for all seasons.' },
-        { src: 'products/hoodie/hoodie2.jpg', name: 'Hoodie 2', price: '$55', sizes: ['S', 'M', 'L', 'XL'], description: 'Stylish and comfortable.' },
-        { src: 'products/hoodie/hoodie3.jpg', name: 'Hoodie 3', price: '$60', sizes: ['S', 'M', 'L', 'XL'], description: 'Perfect for chilly days.' }
+        { src: 'hoodie1.jpg', name: 'Hoodie 1', price: '$50', sizes: ['S', 'M', 'L', 'XL'], description: 'A cozy hoodie for all seasons.' },
+        { src: 'hoodie2.jpg', name: 'Hoodie 2', price: '$55', sizes: ['S', 'M', 'L', 'XL'], description: 'Stylish and comfortable.' },
+        { src: 'hoodie3.jpg', name: 'Hoodie 3', price: '$60', sizes: ['S', 'M', 'L', 'XL'], description: 'Perfect for chilly days.' }
       ],
       pants: [
-        { src: 'products/pants/pants1.jpg', name: 'Pants 1', price: '$40', sizes: ['S', 'M', 'L', 'XL'], description: 'Durable and trendy pants.' },
-        { src: 'products/pants/pants2.jpg', name: 'Pants 2', price: '$45', sizes: ['S', 'M', 'L', 'XL'], description: 'Comfortable and versatile.' },
-        { src: 'products/pants/pants3.jpg', name: 'Pants 3', price: '$50', sizes: ['S', 'M', 'L', 'XL'], description: 'Perfect for any occasion.' }
+        { src: 'pants1.jpg', name: 'Pants 1', price: '$40', sizes: ['S', 'M', 'L', 'XL'], description: 'Durable and trendy pants.' },
+        { src: 'pants2.jpg', name: 'Pants 2', price: '$45', sizes: ['S', 'M', 'L', 'XL'], description: 'Comfortable and versatile.' },
+        { src: 'pants3.jpg', name: 'Pants 3', price: '$50', sizes: ['S', 'M', 'L', 'XL'], description: 'Perfect for any occasion.' }
       ],
       tee: [
-        { src: 'products/tee/tee1.jpg', name: 'Tee 1', price: '$20', sizes: ['S', 'M', 'L', 'XL'], description: 'A stylish tee for everyday wear.' },
-        { src: 'products/tee/tee2.jpg', name: 'Tee 2', price: '$25', sizes: ['S', 'M', 'L', 'XL'], description: 'Comfortable and trendy.' },
-        { src: 'products/tee/tee3.jpg', name: 'Tee 3', price: '$30', sizes: ['S', 'M', 'L', 'XL'], description: 'Perfect for any casual outing.' }
+        { src: 'tee1.jpg', name: 'Tee 1', price: '$20', sizes: ['S', 'M', 'L', 'XL'], description: 'A stylish tee for everyday wear.' },
+        { src: 'tee2.jpg', name: 'Tee 2', price: '$25', sizes: ['S', 'M', 'L', 'XL'], description: 'Comfortable and trendy.' },
+        { src: 'tee3.jpg', name: 'Tee 3', price: '$30', sizes: ['S', 'M', 'L', 'XL'], description: 'Perfect for any casual outing.' }
       ],
       poster: [
-        { src: 'products/poster/poster1.jpg', name: 'Poster 1', price: '$10', sizes: ['18x24 inches', '24x36 inches'], description: 'A beautiful poster to decorate your space.' },
-        { src: 'products/poster/poster2.jpg', name: 'Poster 2', price: '$12', sizes: ['18x24 inches', '24x36 inches'], description: 'High-quality print for your wall.' },
-        { src: 'products/poster/poster3.jpg', name: 'Poster 3', price: '$15', sizes: ['18x24 inches', '24x36 inches'], description: 'Add a touch of art to your room.' },
-        { src: 'products/poster/poster4.jpg', name: 'Poster 4', price: '$10', sizes: ['18x24 inches', '24x36 inches'], description: 'A vibrant poster for your collection.' },
-        { src: 'products/poster/poster5.jpg', name: 'Poster 5', price: '$12', sizes: ['18x24 inches', '24x36 inches'], description: 'Perfect for modern interiors.' },
-        { src: 'products/poster/poster6.jpg', name: 'Poster 6', price: '$15', sizes: ['18x24 inches', '24x36 inches'], description: 'A stunning piece of wall art.' },
-        { src: 'products/poster/poster7.jpg', name: 'Poster 7', price: '$10', sizes: ['18x24 inches', '24x36 inches'], description: 'Brighten up your space with this poster.' },
-        { src: 'products/poster/poster8.jpg', name: 'Poster 8', price: '$12', sizes: ['18x24 inches', '24x36 inches'], description: 'A unique design for your walls.' }
+        { src: 'poster1.jpg', name: 'Poster 1', price: '$10', sizes: ['18x24 inches', '24x36 inches'], description: 'A beautiful poster to decorate your space.' },
+        { src: 'poster2.jpg', name: 'Poster 2', price: '$12', sizes: ['18x24 inches', '24x36 inches'], description: 'High-quality print for your wall.' },
+        { src: 'poster3.jpg', name: 'Poster 3', price: '$15', sizes: ['18x24 inches', '24x36 inches'], description: 'Add a touch of art to your room.' }
       ],
       sticker: [
-        { src: 'products/sticker/sticker1.jpg', name: 'Sticker 1', price: '$5', sizes: ['3x3 inches'], description: 'A cool sticker for your collection.' },
-        { src: 'products/sticker/sticker2.jpg', name: 'Sticker 2', price: '$6', sizes: ['3x3 inches'], description: 'High-quality and durable.' },
-        { src: 'products/sticker/sticker3.jpg', name: 'Sticker 3', price: '$7', sizes: ['3x3 inches'], description: 'Perfect for personalizing your items.' },
-        { src: 'products/sticker/sticker4.jpg', name: 'Sticker 4', price: '$5', sizes: ['3x3 inches'], description: 'Add a touch of fun to your belongings.' },
-        { src: 'products/sticker/sticker5.jpg', name: 'Sticker 5', price: '$6', sizes: ['3x3 inches'], description: 'Stylish and vibrant.' },
-        { src: 'products/sticker/sticker6.jpg', name: 'Sticker 6', price: '$7', sizes: ['3x3 inches'], description: 'A must-have for sticker enthusiasts.' }
+        { src: 'sticker1.jpg', name: 'Sticker 1', price: '$5', sizes: ['3x3 inches'], description: 'A cool sticker for your collection.' },
+        { src: 'sticker2.jpg', name: 'Sticker 2', price: '$6', sizes: ['3x3 inches'], description: 'High-quality and durable.' },
+        { src: 'sticker3.jpg', name: 'Sticker 3', price: '$7', sizes: ['3x3 inches'], description: 'Perfect for personalizing your items.' }
       ]
     };
 
